@@ -1,0 +1,44 @@
+package com.optional;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+class User {
+
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+}
+
+public class OptionalClassExample {
+
+    public static void main(String[] args) {
+        // Create a User instance
+        User user = new User();
+        user.setUserName("Alwin");
+
+        // Get the current date and time
+        LocalDate currentDate = LocalDate.now();
+        LocalTime currentTime = LocalTime.now();
+
+        // Print the current date and time
+        System.out.println("Current Date: " + currentDate);
+        System.out.println("Current Time: " + currentTime);
+
+        // Check the user's name
+        System.out.println("User Name: " + user.getUserName());
+        if (user.getUserName().equalsIgnoreCase("alwin")) {
+            System.out.println("Name is equal to Alwin");
+        } else {
+            System.out.println("Name is not equal to Alwin");
+        }
+    }
+}
+
+
