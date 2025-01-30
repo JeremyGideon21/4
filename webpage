@@ -1,0 +1,14 @@
+<%@ page import="java.sql.*" %>
+<%
+    String jdbcURL = "jdbc:mysql://localhost:3306/userdb";
+    String dbUser = "root";  // Change if you have a different username
+    String dbPassword = "";  // Add your MySQL password
+ 
+    Connection conn = null;
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conn = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+    } catch (Exception e) {
+        out.println("Database connection failed: " + e.getMessage());
+    }
+%>
