@@ -1,0 +1,48 @@
+package com.junitExamples;
+ 
+import static org.junit.jupiter.api.Assertions.*;
+ 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+ 
+@TestMethodOrder(OrderAnnotation.class)
+class CalculatorTest {
+ 
+	private Calculator calculator;
+ 
+	@BeforeEach
+	void setUp() {
+ 
+		calculator = new Calculator();
+	}
+ 
+	
+	@Test
+	void testAddition() {
+ 
+		int result = calculator.add(3, 5);
+		assertEquals(8, result, "5 + 3 shoud be 8");
+ 
+	}
+ 
+	@Test
+	void testWithNegeNumAdd() {
+		int result = calculator.add(-3, -5);
+		assertEquals(-8, result, "-5 - 3 shoud be -8");
+ 
+	}
+ 
+	@Test
+	
+	void testWithZeroNumAdd() {
+		int result = calculator.add(0, -5);
+		assertEquals(-5, result, "-5 ,0 shoud be -5");
+ 
+	}
+ 
+}
